@@ -2,53 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jenkins Stream</title>
+    <title>JenkinsFlix</title>
 
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #141414;
             color: white;
         }
 
+        /* HEADER */
         header {
-            padding: 20px 40px;
             background-color: #000;
+            padding: 20px 40px;
             font-size: 28px;
             font-weight: bold;
-            color: red;
+            color: #e50914;
         }
 
+        /* HERO SECTION */
         .hero {
-            padding: 80px 40px;
-            background: linear-gradient(to right, #000, #141414);
+            padding: 100px 40px;
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 50px;
             margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 20px;
             max-width: 600px;
+            line-height: 1.4;
         }
 
-        .status {
+        .hero button {
             margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* ROW SECTION */
+        .row {
+            padding: 20px 40px;
+        }
+
+        .row h2 {
+            margin-bottom: 10px;
+        }
+
+        .movies {
+            display: flex;
+            gap: 15px;
+        }
+
+        .movie {
+            width: 180px;
+            height: 100px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        /* STATUS */
+        .status {
+            margin: 30px 40px;
             padding: 15px;
             background-color: #1f1f1f;
             border-left: 5px solid #2ecc71;
             font-size: 18px;
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 20px;
             background-color: #000;
-            font-size: 14px;
             color: #aaa;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -56,23 +97,44 @@
 <body>
 
 <header>
-    JenkinsStream
+    JenkinsFlix
 </header>
 
 <section class="hero">
-    <h1>Unlimited Deployments, Zero Downtime</h1>
+    <h1>Unlimited Builds, Unlimited Deployments</h1>
     <p>
-        This application is automatically deployed using Jenkins CI/CD pipeline.
-        Every Git push triggers a new deployment to the server.
+        Watch your applications deploy automatically.
+        Every Git push triggers a Jenkins pipeline and deploys this page to the server.
     </p>
+    <button>Deploy Now</button>
+</section>
 
-    <div class="status">
-        ✅ CI/CD Pipeline Status: Working Successfully
+<section class="row">
+    <h2>Trending Deployments</h2>
+    <div class="movies">
+        <div class="movie">Build #101</div>
+        <div class="movie">Build #102</div>
+        <div class="movie">Build #103</div>
+        <div class="movie">Build #104</div>
     </div>
 </section>
 
+<section class="row">
+    <h2>CI/CD Originals</h2>
+    <div class="movies">
+        <div class="movie">Jenkins</div>
+        <div class="movie">Docker</div>
+        <div class="movie">AWS</div>
+        <div class="movie">DevOps</div>
+    </div>
+</section>
+
+<div class="status">
+    ✅ CI/CD Pipeline Status: Deployment Successful
+</div>
+
 <footer>
-    Powered by Jenkins | Auto Deployment Demo
+    Jenkins CI/CD Demo | Auto Deployed via GitHub
 </footer>
 
 </body>
