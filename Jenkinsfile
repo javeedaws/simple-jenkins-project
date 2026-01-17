@@ -34,9 +34,17 @@ pipeline {
     post {
         success {
             echo "Deployment successful"
+            // Send success email
+            mail to: 'javeedaws60@gmail.com',
+                 subject: "Jenkins Job '${env.JOB_NAME}' Successful",
+                 body: "Good news! The Jenkins job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) succeeded.\nCheck console output at: ${env.BUILD_URL}"
         }
         failure {
             echo "Deployment failed"
+            // Send failure email
+            mail to: 'javeedaws60@gmail.com',
+                 subject: "Jenkins Job '${env.JOB_NAME}' Failed",
+                 body: "Alert! The Jenkins job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) failed.\nCheck console output at: ${env.BUILD_URL}"
         }
     }
 }
